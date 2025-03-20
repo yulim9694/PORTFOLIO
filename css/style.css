@@ -185,13 +185,13 @@ nav li a{
     transition: font-weight 0.3s, transform 0.3s ease-in-out;
 }
 nav li a:hover {
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 nav li a::after{
     display:block;
     content: '';
-    border-bottom: solid 3px var(--yellow-color);  
+    border-bottom: solid 2px var(--yellow-color);  
     transform: scaleX(0);  
     transition: transform 0.3s ease-in-out;
 }
