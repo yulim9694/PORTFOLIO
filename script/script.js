@@ -135,6 +135,8 @@ $(function(){
         // backgorund image src가져오기
 
         $("#detail .popup .popup_img img").attr("src", clickimgsrc);
+        $("#detail .popup").css('display', 'block');
+        $("#detail .popup .popup_img").scrollTop(0);
         $("#detail .popup").fadeIn();
         $('body').css('overflow', 'hidden');
     });
@@ -142,6 +144,7 @@ $(function(){
     $("#detail .popup").click(function(){
         $(this).fadeOut();
         $('body').css('overflow', 'auto');
+
     });
 
     $(".popup .popup_img").on('wheel', function (e) {
