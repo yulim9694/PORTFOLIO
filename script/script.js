@@ -73,57 +73,67 @@ $(function(){
 
 
 
-    // web파트 pin 고정
-
-    const web1 = document.querySelector("#web .web1");
-    const web2 = document.querySelector("#web .web2");
-
-    // web1 화면에 들어올 때 애니메이션
-    // const webani1 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: web1,
-    //     start: "-80% top",
-    //     end: "-30% top",
-    //     scrub: true,
-    //     // markers: true,
-    //   },
-    // });
-    // webani1
-    // .fromTo(web1,{width: "90%", y: 100},{width: "100%", y: 0})
-
-    // web1 고정
-    ScrollTrigger.create({
-      trigger: web1,
-      start: "top top",
-      // end: "bottom bottom",
-      pin: true,
-      pinSpacing: false,
-      // markers: true,
-    });
-    ScrollTrigger.create({
-      trigger: web2,
-      start: "top top",
-      end: "bottom bottom",
-      pin: true,
-      pinSpacing: false,
-      // markers: true,
-    });
-
-    // web2가 화면에 들어올 때 애니메이션
-    // const webani2 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: web2,
-    //     start: "-100% top",
-    //     end: "bottom bottom",
-    //     scrub: true,
-    //     // markers: true,
-    //   },
-    // });
-    // webani2
-    // .fromTo(web2, {width: "80%"},{width: "100%"},"a")
-    // .to(web1, {opacity: 0.5, duration: 1},"a+=0.1")
-
+    // web
+    gsap.to("#web .web_wrap", {
+      scrollTrigger : {
+        trigger: "#web .web_wrap",
+        start: "-20% top",
+        end: "-10% top",
+        scrub: 1,
+        onEnter: () => {
+          gsap.to("#web .web_wrap", {opacity:"1"})
+        },
+        onLeaveBack: () => {
+          gsap.to("#web .web_wrap", {opacity:"0"})
+        }
+      }
+    })
     
+    $("#web .web_wrap .card").each(function(i,e){
+
+      if ($(e).hasClass("last")) {
+        return;
+      }
+
+      ScrollTrigger.create({
+        trigger: e,
+        endTrigger: "#web .web_wrap .card.last",
+        start: "top top+=60",
+        end: "top -5%",
+        pin: true,
+        pinSpacing: false,
+        // markers: 1,
+      });
+
+      gsap.to(e, {
+        scrollTrigger: {
+          trigger: e,
+          start: "top top+=65",
+          end: "top -=70%",
+          scrub: 1,
+        },
+        scale: 0.7,
+        filter: "blur(8px)",
+        ease: "none",
+      });
+    });
+    
+    const web_bottom = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#web .web_wrap .card.last",
+        start: "top top",
+        end: "70% top",
+        scrub: 1,
+        // markers: true,
+      }
+    });
+    web_bottom.to("#web .bottom div:first-child", {backgroundSize: "100%", duration: 1}, 0);
+    web_bottom.to("#web .bottom div:nth-child(2)", {backgroundSize: "100%", duration: 1}, 0.1);
+    web_bottom.to("#web .bottom .btn", {opacity: "1", filter: "blur(0px)", y: "0", duration: 0.5}, 0);
+
+
+
+
 
 
     // detail popup

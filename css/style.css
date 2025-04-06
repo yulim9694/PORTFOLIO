@@ -622,115 +622,135 @@ nav li a:hover::after{
 
 
 /* web */
-#web{
-    width: 100%;
-    height: 200vh;
-}
-#web .wrap{
-    margin: 0;
-    width: 100%;
-}
-.web1{
-    height: 100vh;
-    background-image: url(../images/web_ferrari_bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    #web{
+        padding: 100px 0;
+    }
+    #web .web_wrap{
+        /* opacity: 0; */
+        width: 90%;
+        margin: 0 auto;
+    }
 
-.web2{
-    height: 100vh;
-    background-image: url(../images/web_seoulbikeg_bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    #web .title{
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 30px;
+    }
 
-/* web 공통 */
-#web .inner{
-    margin: 0 auto;
-    display: flex;
-}
-#web .innerwrap{
-    width: 1240px;
-    margin: 0 auto;
-    display: flex;
-}
-#web .left{
-    width: 434px;
-    padding-top: 150px;
-}
-#web .content{
-    padding-top: 100px;
-}
-#web .content h3{
-    font-size: 40px;
-}
-#web .content p{
-    padding-top: 30px;
-    padding-bottom: 20px;
-    line-height: 20px;
-}
-#web .content .list div{
-    display: flex;
-    padding: 10px 0;
-}
-#web .content .list dt{
-    width: 85px;
-    font-weight: 600;
-}
-#web .content .hashtag{
-    color: var(--yellow-color);
-    font-family: 'Adobe Caslon Pro';
-    font-size: 14px;
-    padding-bottom: 40px;
-    display: flex;
-    opacity: 0.8;
-}
-#web .content .hashtag p{
-    padding: 10px 20px 10px 0;
-}
-#web .content .button a{
-    display: inline-block;
-    width: 160px;
-    height: 40px;
-    border: 1px solid var(--white-color);
-    margin-right: 40px;
-    text-align: center;
-    line-height: 40px;
-    position: relative;
-    z-index: 1;
-    border-radius: 3px;
-    overflow: hidden;
-}
-#web .content .button a:before{
-    content: '';
-    width: 0%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--white-color);
-    transition: all 0.4s ease-in;
-    z-index: -1;
-}
-#web .content .button a:hover:before{
-    width: 100%;
-}
-#web .content .button a:hover{
-    color: var(--blueblack-color);
-}
+    #web .card_wrap{
+        overflow: hidden;
+    }
+    #web .card{
+        position: relative;
+        margin-bottom: 8px;
+    }
+    #web .card:hover img{
+        filter: brightness(0.5);
+    }
 
-#web .right{
-    height: 100%;
-}
-#web .right .mockup{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    #web .card img{
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+        object-fit: cover;
+        transition: all 0.3s;
+    }
+
+    #web .card .text{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    #web .card .text .tag{
+        font-family: 'HvDTrial Brandon Grotesque';
+        font-weight: 400;
+        font-size: 18px;
+    }
+    #web .card .text h3{
+        font-family: 'Adobe Caslon Pro';
+        font-weight: 700;
+        font-size: 70px;
+        padding: 20px 0 70px;
+        /* line-height: 190px; */
+    }
+    #web .card .text .bike{
+        font-size: 60px;
+    }
+    #web .card .text .hash{
+        display: flex;
+        justify-content: center;
+    }
+    #web .card .text .hash li{
+        font-family: 'HvDTrial Brandon Grotesque';
+        font-weight: 400;
+        font-size: 14px;
+        padding-right: 30px;
+    }
+    #web .card .text .hash li:last-child{
+        padding-right: 0;
+    }
+
+
+
+
+    #web .bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        text-align: center;
+    }
+    #web .bottom .text{
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.2);
+        background: linear-gradient(to right, #fff, #fff) no-repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 0%;
+        word-break: keep-all;
+        line-height: 24px;
+    }
+    #web .bottom .btn{
+        opacity: 0;
+        overflow: hidden;
+        filter: blur(10px);
+        transform: translateY(30px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        width: 155px;
+        height: 50px;
+        border: solid 2px #e1e1e1;
+        border-radius: 25px;
+        font-family: 'HvDTrial Brandon Grotesque';
+        font-weight: 400;
+        transition: all 0.3s;
+    }
+    #web .bottom .btn:after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: var(--white-color);
+        transition: all 0.3s;
+    }
+    #web .bottom .btn:hover{
+        border: solid 2px transparent;
+        color: var(--blueblack-color);
+    }
+    #web .bottom .btn:hover:after{
+        height: 100%;
+    }
 /* ///web end */
 
 
