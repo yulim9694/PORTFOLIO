@@ -785,6 +785,7 @@ nav li a:hover::after{
     height: 680px;
     position: relative;
     cursor: pointer;
+    border-radius: 25px;
 }
 
 #detail .mask{
@@ -800,6 +801,7 @@ nav li a:hover::after{
     opacity: 0;
     font-weight: 600;
     font-size: 24px;
+    border-radius: 25px;
 }
 #detail .d_img:hover .mask{
     opacity: 1;
@@ -950,12 +952,13 @@ nav li a:hover::after{
     padding-bottom: 100px;
 }
 #banner .banner_img{
-    border: 1px solid #d9dee1;
+    /* border: 1px solid #d9dee1; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    border-radius: 25px;
 }
 #banner .banner_img:hover{
     opacity: 0.5;
